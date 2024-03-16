@@ -1,0 +1,32 @@
+import express from "express";
+import workoutController from "../controllers/workoutController.js";
+const router = express.Router();
+
+router.get("/buildings/", workoutController.getAllBuildings);
+router.get("/bonifications/", workoutController.getAllBonifications);
+router.get("/centerscontract/", workoutController.getAllCentersContract);
+router.get("/localsassociated/", workoutController.getAllLocalsAssociated);
+router.get("/lastcontracts/", workoutController.getAllLastContracts);
+router.get("/societies/", workoutController.getAllSocieties);
+router.get("/lessees/", workoutController.getAllLessees);
+router.get("/locals/", workoutController.getAllLocals);
+router.get("/lesseesdebts/", workoutController.getAllLesseeDebts);
+router.get("/contractdebts/", workoutController.getAllContractDebts);
+router.get("/signers/", workoutController.getAllSigners);
+router.get("/states/", workoutController.getAllStates);
+router.get("/labels/", workoutController.getAllLabels);
+router.get("/lesseegroups/", workoutController.getAllLesseeGroups);
+router.get("/activities/", workoutController.getAllActivities);
+router.get("/buildings/:galleryId/:societyId/:buildingId", workoutController.getBuildingName);
+router.get("/lastcontracts/:centerId/:localId/:lastContractNumber", workoutController.getLastContractByCenterLocalId);
+router.get("/lastcontracts/:localN/:centerId", workoutController.getLastContractsByCenterLocalId);
+router.get("/localsassociated/:idGallery/:idSociety/:idContract", workoutController.getUMODLocalsAssociated);
+router.get("/contractdebts/:idSociety/:idGallery/:idContract", workoutController.getBalanceContract);
+router.get("/signers/:representanteId", workoutController.getSignerByID);
+router.get("/lessees/:lesseeId", workoutController.getLesseeByID);
+router.get("/lesseesdebts/:lesseeId", workoutController.getLesseeDebtsByID);
+router.get("/bonifications/:centerId/:societyId/:lastContractId", workoutController.getBonificationsByCenterSocietyLastContractId);
+router.get("/locals/:centerId", workoutController.getAllLocalsByGaleriaId);
+router.get("/states/:provinciaId", workoutController.getAllStatesByProvinciaId);
+
+export default router;
